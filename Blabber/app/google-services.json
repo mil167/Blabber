@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "566658895624",
+    "firebase_url": "https://blabber-71b43.firebaseio.com",
+    "project_id": "blabber-71b43",
+    "storage_bucket": "blabber-71b43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566658895624:android:4305f2212fe3a4c5",
+        "android_client_info": {
+          "package_name": "com.example.blabber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566658895624-vnh77ap7qk0q6u1dt32qfi6b9qjb79js.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.blabber",
+            "certificate_hash": "b12a3ebc065cfd6e85bd258c62f66600cef8c5dd"
+          }
+        },
+        {
+          "client_id": "566658895624-9d95loch5s1tcsucg5c09pbcks50tq98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhu3gXqZ_jlRMDRTXN1IPA6iwSW-_MYNg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566658895624-9d95loch5s1tcsucg5c09pbcks50tq98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

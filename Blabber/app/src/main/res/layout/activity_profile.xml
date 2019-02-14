@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ProfileActivity">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="222dp"
+        android:layout_height="208dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="100dp"
+        android:src="@drawable/profile_trans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/profile_displayname"/>
+
+    <TextView
+        android:id="@+id/profile_displayname"
+        android:layout_width="200dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/display_name"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/profile_friends"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_image" />
+
+    <TextView
+        android:id="@+id/profile_status"
+        android:layout_width="327dp"
+        android:layout_height="70dp"
+        android:text="@string/description"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="417dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_friends"
+        app:layout_constraintBottom_toTopOf="@id/profile_request"/>
+
+    <Button
+        android:id="@+id/profile_request"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:backgroundTint="@color/colorGreen"
+        android:text="@string/send_friend_request"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="552dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_status"
+        app:layout_constraintBottom_toTopOf="@id/profile_decline"/>
+
+    <Button
+        android:id="@+id/profile_decline"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/decline_friend_request"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="624dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_request"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/profile_friends"
+        android:layout_width="215dp"
+        android:layout_height="37dp"
+        android:text="@string/friends"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="356dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_displayname"
+        app:layout_constraintBottom_toTopOf="@id/profile_status"/>
+
+
+</android.support.constraint.ConstraintLayout>
