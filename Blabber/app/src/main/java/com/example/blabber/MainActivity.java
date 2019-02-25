@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,10 +16,14 @@ import android.view.MenuItem;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private DatabaseReference userRef;
 
     private SectionsPagerAdapter spa;
     private TabLayout tabLayout;
@@ -28,7 +33,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FirebaseApp.initializeApp(this);
+
         mAuth = FirebaseAuth.getInstance();
+
+        if(mAuth.getCurrentUser() != null) {
+            userRef = FirebaseDatabase.getInstance()
+                    .getReference()
+                    .child("Users")
+                    .child(mAuth.getCurrentUser().getUid());
+        }
 
         Toolbar navbar = findViewById(R.id.main_page_navbar);
         setSupportActionBar(navbar);
@@ -52,6 +65,24 @@ public class MainActivity extends AppCompatActivity {
 
         if(currentUser == null) {
             sendToStart();
+        } else {
+            userRef.child("online").setValue(true);
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null) {
+            userRef.child("online").setValue(false);
         }
     }
 
@@ -80,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
 
         if(item.getItemId() == R.id.main_logout){
+            userRef.child("online").setValue(false);
+            userRef.child("last_seen").setValue(ServerValue.TIMESTAMP);
             FirebaseAuth.getInstance().signOut();
             sendToStart();
         }

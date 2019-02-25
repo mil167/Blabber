@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +23,7 @@ public class StatusActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TextInputLayout status;
     private Button saveButton;
+    private TextView status_title;
 
     private DatabaseReference statusDatabase;
     private FirebaseUser curr_user;
@@ -37,8 +39,12 @@ public class StatusActivity extends AppCompatActivity {
 
 
         toolbar = findViewById(R.id.status_navbar);
+        status_title = toolbar.findViewById(R.id.navbar_title);
+        status_title.setText("Edit Status");
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         status = findViewById(R.id.status_text);
         saveButton = findViewById(R.id.status_save);

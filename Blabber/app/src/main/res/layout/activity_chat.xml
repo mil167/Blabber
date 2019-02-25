@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="#cccccc"
+    tools:context=".ChatActivity">
+
+    <include
+        android:id="@+id/chat_toolbar"
+        layout="@layout/chat_custom_bar" />
+
+    <LinearLayout
+        android:id="@+id/chat_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="600dp"
+        android:orientation="horizontal"
+        android:background="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/chat_toolbar">
+
+
+        <EditText
+            android:id="@+id/chat_chatbox"
+            android:layout_width="346dp"
+            android:layout_height="match_parent"
+            android:hint="@string/enter_message"
+            android:inputType="textAutoCorrect|textCapSentences"
+            android:windowSoftInputMode="adjustResize"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/chat_sendmsg"
+            android:layout_width="64dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/send_message"
+            android:src="@drawable/baseline_send_black_18dp"
+            android:background="@color/colorWhite"/>
+
+    </LinearLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintTop_toBottomOf="@id/chat_toolbar"
+        app:layout_constraintBottom_toTopOf="@id/chat_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/chat_allmsg"
+            android:layout_width="match_parent"
+            android:layout_height="520dp"
+            app:layout_constraintBottom_toTopOf="@id/chat_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chat_toolbar" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</android.support.constraint.ConstraintLayout>

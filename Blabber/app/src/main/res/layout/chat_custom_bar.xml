@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="75dp"
+    android:background="@color/colorPrimary">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/custombar_img"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/profile_trans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/custombar_name"
+        android:layout_width="220dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/display_name"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/custombar_lastseen"
+        app:layout_constraintEnd_toStartOf="@id/custombar_img"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/custombar_lastseen"
+        android:layout_width="220dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/last_seen"
+        android:textSize="12sp"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toStartOf="@id/custombar_img"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custombar_name"
+        />
+
+</android.support.constraint.ConstraintLayout>

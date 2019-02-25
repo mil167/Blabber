@@ -43,4 +43,16 @@
         app:layout_constraintStart_toEndOf="@+id/user_pic"
         app:layout_constraintTop_toBottomOf="@+id/user_name" />
 
+    <ImageView
+        android:id="@+id/user_online"
+        android:layout_width="44dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintStart_toEndOf="@id/user_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/online"
+        android:contentDescription="@string/user_online_offline"/>
+
 </android.support.constraint.ConstraintLayout>

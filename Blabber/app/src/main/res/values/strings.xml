@@ -43,5 +43,10 @@
     <string name="send_friend_request">Send Friend Request</string>
     <string name="friends">Friends</string>
     <string name="decline_friend_request">Decline Friend Request</string>
+    <string name="user_online_offline">User Online/Offline</string>
+    <string name="last_seen">Last Seen</string>
+    <string name="add_image">Add_Image</string>
+    <string name="send_message">Send_Message</string>
+    <string name="enter_message">Enter Message...</string>
 
 </resources>

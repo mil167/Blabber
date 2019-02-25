@@ -1,7 +1,6 @@
 package com.example.blabber;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,8 +36,12 @@ public class UsersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_users);
 
         Toolbar navbar = findViewById(R.id.users_toolbar);
+        TextView user_title = navbar.findViewById(R.id.navbar_title);
+        user_title.setText("All Users");
+
         setSupportActionBar(navbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         userDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
