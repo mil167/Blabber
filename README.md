@@ -1,2 +1,2 @@
 # Blabber
-Mobile chat app built on Android
+Mobile chat app built on Android and supported by Google Firebase.
